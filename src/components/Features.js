@@ -4,10 +4,10 @@ import styled from "styled-components";
 const Features = () => {
   return (
     <FeaturesContainer>
-      <div class="features-inner">
-        <h2 class="features-title">some title</h2>
+      <div className="features-inner">
+        <h2 className="features-title">Our Values</h2>
 
-        <div class="features-item">
+        <div className="features-item">
           <h4>some title</h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
@@ -15,7 +15,7 @@ const Features = () => {
             similique qui quod.
           </p>
         </div>
-        <div class="features-item">
+        <div className="features-item">
           <h4>some title</h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
@@ -23,7 +23,7 @@ const Features = () => {
             similique qui quod.
           </p>
         </div>
-        <div class="features-item">
+        <div className="features-item">
           <h4>some title</h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
@@ -40,9 +40,7 @@ const FeaturesContainer = styled.section`
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 2.5em 1.5em 2.5em;
-
-  color: var(--whi);
+  padding: 3.5em 1.5em 3.5em;
 
   .features-inner {
     display: grid;
@@ -53,6 +51,7 @@ const FeaturesContainer = styled.section`
     width: 100%;
     max-width: calc(420px + 6em);
     margin: 0 auto;
+
     .features-title {
       text-align: center;
       margin-bottom: .5em;
@@ -78,7 +77,7 @@ const FeaturesContainer = styled.section`
   @media (min-width: 50em) {
     .features-inner {
       grid-template-columns: 1fr 1fr 1fr;
-    max-width: 980px;
+    max-width: 1080px;
 
       .features-title {
         grid-column: span 3;

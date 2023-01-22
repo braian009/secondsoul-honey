@@ -4,10 +4,10 @@ import styled from "styled-components";
 const Navbar = () => {
   return (
     <NavbarContainer>
-      <div class="nav-inner">
-        <div class="nav-brand">SS.</div>
-        <div class="nav-menu">
-          <ul class="nav-submenu">
+      <div className="nav-inner">
+        <div className="nav-brand">SS.</div>
+        <div className="nav-menu">
+          <ul className="nav-submenu">
             <li>about</li>
             <li>our principles</li>
             <li>products</li>

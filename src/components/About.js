@@ -4,11 +4,11 @@ import styled from "styled-components";
 const About = () => {
   return (
     <AboutContainer>
-      <div class="about-inner">
-        <h2 class="about-title">About us</h2>
+      <div className="about-inner">
+        <h2 className="about-title">About us</h2>
 
-        <div class="about-img"></div>
-        <div class="about-info">
+        <div className="about-img"></div>
+        <div className="about-info">
           <h3>some titile of some kind</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sit
