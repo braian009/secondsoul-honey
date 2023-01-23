@@ -24,7 +24,7 @@ const NavbarContainer = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  padding: 1.5em 2em;
+  padding: 2em 2em;
   background-color: hsla(0, 0%, 0%, 1);
   z-index: 10;
 

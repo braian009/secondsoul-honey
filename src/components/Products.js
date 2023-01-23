@@ -50,7 +50,7 @@ const Products = () => {
         <Slider {...settings}>
           {honeyItems.map((item, i) => {
             return (
-              <div className="product-card" key={`item-${i}`}>
+              <div className="product-card" key={`product-${i}`}>
                 <div
                   className="product-card__icon"
                   style={{ backgroundImage: `url(${item.image})` }}
@@ -92,7 +92,7 @@ const ProductsContainer = styled.section`
       transform: scale(1.75);
     }
     .slick-dots li button:before{
-    color: var(--white-primary);
+    color: var(--brown-primary);
 }
 
   }

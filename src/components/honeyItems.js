@@ -12,7 +12,7 @@ const honeyItems = [
         image: require('../assets/images/honeyjar3.jpg'),
     },
     {
-        name: 'Acacia honey',
+        name: 'Sage honey',
         image: require('../assets/images/honeyjar4.jpg'),
     },
     {
@@ -20,7 +20,7 @@ const honeyItems = [
         image: require('../assets/images/honeyjar5.jpg'),
     },
     {
-        name: 'Sage honey',
+        name: 'Acacia honey',
         image: require('../assets/images/honeyjar6.jpg'),
     },
     {

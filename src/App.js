@@ -4,8 +4,9 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Features from './components/Features';
+import Values from './components/Values';
 import Products from './components/Products';
+import Features from './components/Features';
 
 const App = () => {
   return (
@@ -13,8 +14,9 @@ const App = () => {
       <Navbar/>
       <Hero/>
       <About/>
-      <Features/>
+      <Values/>
       <Products/>
+      <Features/>
     </div>
   );
 };
