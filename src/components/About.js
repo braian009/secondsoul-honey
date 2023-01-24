@@ -1,5 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
+import aboutFarm from "../assets/images/about1.jpg";
+import aboutBeekepers from "../assets/images/about2.jpg";
 
 const About = () => {
   return (
@@ -9,13 +11,15 @@ const About = () => {
 
         <div className="about-img"></div>
         <div className="about-info">
-          <h3>some titile of some kind</h3>
+          <h4>From our family farm to your table...</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sit
-            molestiae quis nihil dolore, impedit quaerat fuga voluptas
-            praesentium facere maiores sed laborum, magnam eius aperiam sapiente
-            error modi totam sunt odio corporis iste. Accusamus perferendis
-            impedit asperiores quia suscipit?
+            Our honey business began on a small family farm, where our founder,
+            Jim, was fascinated by the honeybees and their honey. He studied
+            beekeeping and started producing honey on his farm. As the business
+            grew, he built a processing facility and started collaborating with
+            other local beekeepers. Today, we are one of the leading honey
+            producers in the area, known for producing high-quality honey using
+            traditional methods.
           </p>
         </div>
       </div>
@@ -54,9 +58,25 @@ const AboutContainer = styled.section`
     max-width: 420px;
     justify-self: center;
     height: 18em;
-    background-color: gray;
-    opacity: 0.2;
+    background-image: url(${aboutFarm});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     border: 1px solid var(--brown-primary);
+    transition: all 0.3s linear;
+    animation: alternate-pic 14s infinite;
+
+    @keyframes alternate-pic {
+      0% {
+        background-image: url(${aboutFarm});
+      }
+      50% {
+        background-image: url(${aboutBeekepers});
+      }
+      100% {
+        background-image: url(${aboutFarm});
+      }
+    }
   }
 
   .about-info {
@@ -94,7 +114,7 @@ const AboutContainer = styled.section`
     }
   }
 
-  @media (min-width: 50em) {
+  @media (min-width: 55em) {
     .about-inner {
       grid-template-columns: 1fr 1fr;
       padding: 1.5em;
@@ -115,8 +135,10 @@ const AboutContainer = styled.section`
       justify-self: left;
       grid-column: span 1;
 
-      h3 {
+      h4 {
         text-align: left;
+        line-height: 1.2;
+
       }
       p {
         text-align: left;

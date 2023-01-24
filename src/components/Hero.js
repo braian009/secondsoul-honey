@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import pageBackground from "../assets/images/pagebackground44.jpg";
+import Funfact from "./FunFact";
 
 const Hero = () => {
   return (
@@ -12,7 +13,10 @@ const Hero = () => {
             <div>Second</div>
             <div>Soul.</div>
           </div>
-          <div className="cta-button">Order now</div>
+          <div className="cta-button" onClick={() => console.log('a')}>Order now</div>
+        </div>
+        <div className="hero-funfact">
+          <Funfact />
         </div>
       </div>
     </HeroContainer>
@@ -27,17 +31,19 @@ const HeroContainer = styled.section`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  overflow: hidden;
 
-  z-index: -10;
+  /* z-index: -10; */
 
   .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 2.5em;
     margin: 0 auto;
     background-color: hsla(0, 0%, 0%, 0.5);
+    z-index: 5;
   }
 
   .hero-inner {
@@ -45,11 +51,18 @@ const HeroContainer = styled.section`
     top: 0;
     left: 0;
     width: 100%;
+    height: 60%;
     max-width: 1080px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding-top: 2.5em;
+    z-index: 10;
+
+    .hero-funfact {
+      margin-left: auto;
+    }
   }
   .hero-content {
     display: flex;
@@ -57,15 +70,14 @@ const HeroContainer = styled.section`
     position: relative;
     padding-top: 1.5em;
     padding-left: 1.5em;
-
   }
 
   .hero-brand {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: lighter;
 
     div {
-        line-height: 0.9;
+      line-height: 0.9;
     }
   }
 
@@ -79,8 +91,6 @@ const HeroContainer = styled.section`
   }
 
   @media (min-width: 1080px) {
-    
-
     .hero-content {
       padding-left: 0;
     }

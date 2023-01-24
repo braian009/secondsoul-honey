@@ -26,7 +26,7 @@ const Features = () => {
 const FeaturesContainer = styled.section`
   width: 100%;
   margin: 0 auto;
-  padding: 3.5em 1.5em 3.5em;
+  padding: 3.5em 0 3.5em;
 
   .features-inner {
     display: grid;
@@ -60,15 +60,21 @@ const FeaturesContainer = styled.section`
         display: flex;
         flex-direction: column;
       height: 22em;
+      width: 100%;
       padding: 1em;
 
       max-width: 520px;
       margin: 0 auto;
 
 
-      border: 1px solid var(--brown-primary);
+      /* border: 1px solid var(--brown-primary); */
       border-radius: 0.7em;
       background: none;
+      box-shadow: 2px 2px 4px 0px var(--brown-primary);
+/* box-shadow: 1px 1px 2px 0px var(--brown-primary); */
+/* box-shadow: 3px 3px 6px 0px var(--brown-primary); */
+/* box-shadow: 2px 2px 4px 0px var(--brown-primary); */
+/* box-shadow: 0px 0px 10px 0px var(--brown-primary); */
 
 
       
@@ -85,7 +91,7 @@ const FeaturesContainer = styled.section`
       }
 
       .features-item__info {
-        font-size: .8rem;
+        font-size: .85rem;
         margin-top: 1em;
         flex: 5%;
         color: var(--white-primary);

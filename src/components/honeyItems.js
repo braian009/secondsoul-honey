@@ -31,10 +31,10 @@ const honeyItems = [
         name: 'Chestnut honey',
         image: require('../assets/images/honeyjar8.jpg'),
     },
-    {
-        name: 'Alfalfa honey',
-        image: require('../assets/images/honeyjar9.jpg'),
-    },
+    // {
+    //     name: 'Alfalfa honey',
+    //     image: require('../assets/images/honeyjar9.jpg'),
+    // },
     {
         name: 'Fireweed honey',
         image: require('../assets/images/honeyjar10.jpg'),
