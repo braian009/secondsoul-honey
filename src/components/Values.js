@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Values = () => {
   return (
-    <ValuesContainer>
+    <ValuesContainer id="values">
       <div className="values-inner">
         <h2 className="values-title">Our Values</h2>
 
@@ -52,7 +52,6 @@ const ValuesContainer = styled.section`
   max-width: 1080px;
   margin: 0 auto;
   padding: 3.5em 1.5em 3.5em;
-
   .values-inner {
     display: grid;
     grid-template-columns: 1fr;
@@ -73,17 +72,19 @@ const ValuesContainer = styled.section`
       border-radius: 0.5em;
 
       .values-item__title {
-        overflow: hidden;
         position: relative;
+        
 
         .values-item__line {
           display: inline-block;
           position: absolute;
           top: 35%;
-          width: 80%;
-          margin-left: 1em;
+          width: 60%;
+          margin-left: auto;
+
           height: 1px;
           border-bottom: 1px solid var(--brown-primary);
+          box-shadow: 0 0 78.9264px var(--brown-primary), 0 0 45.1008px var(--brown-primary), 0 0 26.3088px var(--brown-primary), 0 0 13.1544px var(--brown-primary), 0 0 3.7584px var(--brown-primary), 0 0 1.8792px var(--brown-primary);
         }
 
         
@@ -93,9 +94,11 @@ const ValuesContainer = styled.section`
         display: inline-block;
         margin-bottom: 1em;
         text-align: center;
+        margin-right: 0.5em;
       }
       p {
         text-align: center;
+        color: var(--white-secondary);
       }
     }
   }

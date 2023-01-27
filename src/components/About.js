@@ -5,7 +5,7 @@ import aboutBeekepers from "../assets/images/about2.jpg";
 
 const About = () => {
   return (
-    <AboutContainer>
+    <AboutContainer id="about">
       <div className="about-inner">
         <h2 className="about-title">About us</h2>
 
@@ -30,7 +30,7 @@ const About = () => {
 const AboutContainer = styled.section`
   width: 100%;
   margin: 0 auto;
-  padding: 1.5em 0 1.5em;
+  padding: 2.5em 0 1em;
   position: relative;
   top: -2.5em;
 
@@ -48,9 +48,10 @@ const AboutContainer = styled.section`
     margin: 0 auto;
     gap: 1.5em;
     background-color: var(--black-primary);
-    padding: 0 2.5em;
 
-    border-radius: 0.5em;
+    padding: 0 1em;
+
+    border-radius: 0.7em;
   }
 
   .about-img {
@@ -62,7 +63,8 @@ const AboutContainer = styled.section`
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 1px solid var(--brown-primary);
+    border: 2px solid var(--brown-secondary);
+    border-radius: 0.7em;
     transition: all 0.3s linear;
     animation: alternate-pic 14s infinite;
 
@@ -88,11 +90,13 @@ const AboutContainer = styled.section`
   .about-info h2 {
     line-height: 0.9;
     text-align: left;
+    
   }
 
   .about-info p {
     margin: 0;
     text-align: left;
+    color: var(--white-secondary);
 
     margin-top: 1em;
   }
@@ -109,8 +113,8 @@ const AboutContainer = styled.section`
 
     .about-inner {
       max-width: calc(420px + 6em);
-      padding-top: 1.5em;
-      padding-bottom: 1.5em;
+      
+      padding: 1.5em 2.5em;
     }
   }
 

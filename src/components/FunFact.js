@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { ReactComponent as Question } from "../assets/icons/question.svg";
 
 const factList = [
   "Honey never spoils. Archaeologists have found pots of honey in Egyptian tombs dating back to thousands of years ago that were still edible.",
@@ -10,8 +11,25 @@ const factList = [
 ];
 
 const Funfact = () => {
+  console.log("facts render");
   const [display, setDisplay] = React.useState(false);
-  const [fact, setFact] = React.useState(factList[Math.floor(Math.random() * factList.length)]);
+  const [fact, setFact] = React.useState(
+    factList[Math.floor(Math.random() * factList.length)]
+  );
+
+  const closeOnScroll = () => {
+    if (display) {
+      setDisplay(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", closeOnScroll);
+
+    return () => {
+      window.removeEventListener("scroll", closeOnScroll);
+    };
+  }, [display]);
 
   const handleShowFact = (e) => {
     setDisplay(!display);
@@ -21,9 +39,9 @@ const Funfact = () => {
     <FunfactContainer>
       <div className="funfact-inner">
         <div className="funfact-button" onClick={handleShowFact}>
-          ?
+          <Question />
         </div>
-        <div className={`funfact-text ${display ? 'shown' : ''}`}>
+        <div className={`funfact-text ${display ? "shown" : ""}`}>
           <p>Fun Fact:</p>
           <p>{fact}</p>
         </div>
@@ -34,8 +52,7 @@ const Funfact = () => {
 
 const FunfactContainer = styled.div`
   width: 20em;
-  height: 15em;
-  padding: 1em;
+  height: 12em;
 
   .funfact-inner {
     position: relative;
@@ -44,25 +61,49 @@ const FunfactContainer = styled.div`
 
     .funfact-button {
       position: absolute;
-      background-color: black;
       color: white;
       outline: none;
-      border-radius: 20px;
-      padding: 0.5em 0.8em;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
 
-      top: 0;
+      bottom: 1.5em;
       right: 0;
       z-index: 10;
+
+    
+
+      svg {
+        width: 40px;
+        height: 40px;
+        filter: drop-shadow(4px 8px 4px var(--black-primary));
+        fill: var(--white-secondary);
+        transition: all 0.3s ease-out;
+        border-radius: 50%;
+        cursor: pointer;
+
+
+        &:hover {
+          fill: var(--brown-secondary);
+        }
+
+      }
     }
 
     .funfact-text {
+      font-size: 0.9rem;
       transform: translate(12em, 0);
       opacity: 0;
-      transition: all 0.2s ease-out;
+      transition: all 0.3s ease-out;
       position: relative;
       top: 2.5em;
       padding: 1em;
-      background-image: linear-gradient(to right, hsla(0, 0%, 0%, 0.5), transparent);
+      background-image: linear-gradient(
+        to right,
+        hsla(0, 0%, 0%, 0.7),
+        transparent
+      );
+      border-radius: 0.7em;
 
       &.shown {
         transform: translate(0, 0);

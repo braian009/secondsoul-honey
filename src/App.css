@@ -7,11 +7,16 @@
   --dark-green: #3f4c2f;
   --dark-vanila: #d4caa3;
   --black-primary: #202020;
-  --black-secondary: hsl(0, 0%, 21%);
+  --black-secondary: #2c2c2c;
   --white-primary: #f8f8f8;
   --gray-primary: #d3d3d3;
 
   --brown-primary: #a68c5d;
+  --brown-secondary: #735838;
+
+  --blue-primary: #1c3d5a; 
+  --blue-secondary: #3b5c7d;
+
 
   --white-secondary: #d8d8d8;
   --white-opaque: hsla(0, 0%, 85%, 0.41);

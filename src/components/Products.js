@@ -44,7 +44,7 @@ const settings = {
 
 const Products = () => {
   return (
-    <ProductsContainer>
+    <ProductsContainer id="products">
       <div className="products-inner">
         <h2 className="products-title">Our Products</h2>
         <Slider {...settings}>
@@ -71,6 +71,13 @@ const ProductsContainer = styled.section`
   width: 100%;
   margin: 0 auto;
   padding: 3.5em 1.5em 3.5em;
+  background-color: #242424;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-top: 2px solid var(--brown-secondary);
+  border-bottom: 2px solid var(--brown-secondary);
 
   .products-inner {
     width: 95%;
@@ -86,10 +93,10 @@ const ProductsContainer = styled.section`
     }
 
     .slick-dots {
-      /* bottom: -35px; */
 
       li {
         margin: 0;
+        
       }
     }
 
@@ -116,6 +123,7 @@ const ProductsContainer = styled.section`
     height: 16.75em;
   }
 
+
   .slick-slide {
     padding: 0.5em;
 
@@ -125,20 +133,24 @@ const ProductsContainer = styled.section`
   }
 
   .product-card {
-    border-radius: 0.7em;
+    border-top-left-radius: 0.7em;
+    border-top-right-radius: 0.7em;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
     height: 100%;
     position: relative;
-    /* border: 1px solid var(--white-secondary); */
 
     transition: all 0.3s ease-out;
     z-index: 10;
-box-shadow: 0 1px 2px 0px var(--brown-primary);
+box-shadow: 0 1px 2px 0px var(--brown-secondary);
+background-color: var(--black-primary);
+
 
 
     &:hover {
       transform: scale(1.02);
       transform: translateY(-0.25em);
-      box-shadow: 0 1px 5px 0 var(--brown-primary);
+      box-shadow: 0 1px 5px 0 var(--brown-secondary);
       z-index: 100;
 
       .product-card__icon {
@@ -147,13 +159,15 @@ box-shadow: 0 1px 2px 0px var(--brown-primary);
     }
 
     .product-card__icon {
+
       width: 100%;
       height: 12em;
       position: relative;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      border-radius: 0.6em;
+      border-top-left-radius: 0.7em;
+    border-top-right-radius: 0.7em;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       opacity: 0.7;

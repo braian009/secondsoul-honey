@@ -7,7 +7,7 @@ import { ReactComponent as Instagram } from "../assets/icons/instagram.svg";
 
 const Contact = () => {
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <div className="contact-inner">
         <h2 className="contact-title">Contact</h2>
         <div className="contact-links">
@@ -69,10 +69,6 @@ const ContactContainer = styled.section`
         .contact-links__item {
           grid-column: span 1;
         }
-/* 
-        .contact-links__item:nth-child(2) {
-          justify-self: end;
-        } */
 
       }
     }
