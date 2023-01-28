@@ -1,49 +1,31 @@
-import * as React from "react";
 import styled from "styled-components";
-import pageBackground from "../assets/images/pagebackground44.jpg";
-import Funfact from "./FunFact";
-import { ReactComponent as Instagram } from "../assets/icons/instagram.svg";
-import { ReactComponent as Twitter } from "../assets/icons/twitter.svg";
 
-const Hero = () => {
-  return (
-    <HeroContainer>
-      <div className="hero-overlay"></div>
-      <div className="hero-inner">
-        <div className="hero-content">
-          <div className="hero-brand">
-            <div>Second</div>
-            <div>Soul.</div>
-          </div>
-          <button className="cta-button" onClick={() => console.log("a")}>
-            Order now
-          </button>
-          <div className="hero-links">
-            <div className="hero-links__item">
-              <Instagram />
-            </div>
-            <div className="hero-links__item">
-              <Twitter />
-            </div>
-          </div>
-        </div>
-        <div className="hero-funfact">
-          <Funfact />
-        </div>
-      </div>
-    </HeroContainer>
-  );
-};
+import pageBackground from "../../assets/images/pagebackground44.jpg";
+
 
 const HeroContainer = styled.section`
   position: relative;
   width: 100%;
   height: 130vh;
+
   background-image: url(${pageBackground});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
   overflow: hidden;
+
+  @keyframes little-offset {
+    0% {
+      transform: translateY(-0.25em);
+    }
+    50% {
+      transform: translateY(0.25em);
+    }
+    100% {
+      transform: translateY(-0.25em);
+    }
+  }
 
   .hero-overlay {
     position: absolute;
@@ -51,32 +33,26 @@ const HeroContainer = styled.section`
     left: 0;
     right: 0;
     bottom: 2.5em;
+
     margin: 0 auto;
-    background-color: hsla(0, 0%, 0%, 0.5);
-    /* background-image: linear-gradient(
-      99deg,
-      hsla(0, 0%, 0%, 0.5) 0%,
-      hsla(0, 0%, 0%, 0.5) 33.333%,
-      transparent 33.333%,
-      transparent 66.667%,
-      hsla(0, 0%, 0%, 0.5) 66.667%,
-      hsla(0, 0%, 0%, 0.5) 100%
-    ); */
+    background-color: hsla(0, 0%, 0%, 0.4);
     z-index: 5;
   }
 
   .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+
     position: relative;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 75%;
     max-width: 1080px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    padding-top: 5em;
+    padding-top: 4.5em;
 
     z-index: 10;
 
@@ -84,11 +60,10 @@ const HeroContainer = styled.section`
       position: relative;
       grid-column: 1 / 3;
       grid-row: 3 / 4;
+      align-self: end;
 
       margin-left: auto;
       margin-right: 1.5em;
-      align-self: end;
-      /* border-top: 1px solid black; */
 
       &::before {
         content: "";
@@ -109,50 +84,55 @@ const HeroContainer = styled.section`
       }
     }
   }
+
   .hero-content {
-    grid-column: 1 / 3;
-    grid-row: 1 / 3;
     display: flex;
     flex-direction: column;
+
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+
     position: relative;
-    padding-top: 1em;
+
     margin-right: 1.5em;
+    padding-top: 1em;
     padding-left: 1.5em;
-
-    /* border-top: 1px solid black; */
-
-    /* border-radius: 1em; */
   }
 
   .hero-brand {
     font-size: 4.5rem;
     font-weight: lighter;
+
     div {
       line-height: 0.9;
-      text-shadow: 4px 8px 4px var(--black-primary);
       color: var(--white-secondary);
+      text-shadow: 4px 6px 4px var(--black-primary);
     }
   }
 
   .cta-button {
-    font-family: "Noto Serif", serif;
     font-size: 1rem;
-    padding: 0.5em 0.8em;
+    font-family: "Noto Serif", serif;
     text-align: center;
-    border-radius: 20px;
-    margin-top: 1em;
-    background-color: var(--brown-primary);
-    color: var(--white-secondary);
+
     width: 7.5em;
+    padding: 0.5em 0.8em;
+    margin-top: 1em;
+
+    color: var(--white-secondary);
+    background-color: var(--brown-primary);
+    border-radius: 20px;
+
     cursor: pointer;
+
     transition: background-color 0.3s ease-out;
-    animation: little-offset 7s infinite;
+    animation: color-change 7s infinite ease-in-out;
     border: none;
     outline: none;
 
-    box-shadow: 4px 8px 4px var(--black-primary);
+    box-shadow: 4px 6px 4px var(--black-primary);
 
-    @keyframes little-offset {
+    @keyframes color-change {
       0% {
         background-color: var(--brown-primary);
       }
@@ -171,11 +151,13 @@ const HeroContainer = styled.section`
   }
 
   .hero-links {
+    display: flex;
+
     position: relative;
     padding: 0;
+
     margin: 0;
     margin-top: 1em;
-    display: flex;
     padding-bottom: 1.25em;
 
     &::before {
@@ -188,6 +170,8 @@ const HeroContainer = styled.section`
       bottom: 0;
       left: 0;
 
+      animation: little-offset 7s ease-in-out infinite;
+
       box-shadow: 0 0 78.9264px var(--black-secondary),
         0 0 45.1008px var(--black-secondary),
         0 0 26.3088px var(--black-secondary),
@@ -198,9 +182,10 @@ const HeroContainer = styled.section`
     svg {
       width: 35px;
       height: 35px;
-      transition: all 0.3s ease-out;
       fill: var(--black-primary);
-      filter: drop-shadow(4px 8px 4px var(--black-primary));
+      filter: drop-shadow(4px 6px 4px var(--black-primary));
+
+      transition: all 0.3s ease-out;
 
       &:hover {
         transform: scale(1.1);
@@ -244,9 +229,26 @@ const HeroContainer = styled.section`
           0 0 3.7584px var(--black-secondary),
           0 0 1.8792px var(--black-secondary);
       }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: var(--black-secondary);
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        box-shadow: 0 0 78.9264px var(--black-secondary),
+          0 0 45.1008px var(--black-secondary),
+          0 0 26.3088px var(--black-secondary),
+          0 0 13.1544px var(--black-secondary),
+          0 0 3.7584px var(--black-secondary),
+          0 0 1.8792px var(--black-secondary);
+      }
     }
     .hero-content {
-      padding-left: 0;
       margin-right: 0;
     }
     .hero-funfact {
@@ -256,4 +258,4 @@ const HeroContainer = styled.section`
   }
 `;
 
-export default Hero;
+export default HeroContainer;

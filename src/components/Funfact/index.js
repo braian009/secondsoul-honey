@@ -1,6 +1,8 @@
 import * as React from "react";
-import styled from "styled-components";
-import { ReactComponent as Question } from "../assets/icons/question.svg";
+
+import FunfactContainer from "./FunfactContainer";
+
+import { ReactComponent as Question } from "../../assets/icons/question.svg";
 
 const factList = [
   "Honey never spoils. Archaeologists have found pots of honey in Egyptian tombs dating back to thousands of years ago that were still edible.",
@@ -35,6 +37,7 @@ const Funfact = () => {
     setDisplay(!display);
     e.preventDefault();
   };
+
   return (
     <FunfactContainer>
       <div className="funfact-inner">
@@ -42,7 +45,7 @@ const Funfact = () => {
           <Question />
         </div>
         <div className={`funfact-text ${display ? "shown" : ""}`}>
-          <p>Fun Fact:</p>
+          <h4>Fun Fact:</h4>
           <p>{fact}</p>
         </div>
       </div>
@@ -50,67 +53,5 @@ const Funfact = () => {
   );
 };
 
-const FunfactContainer = styled.div`
-  width: 20em;
-  height: 12em;
-
-  .funfact-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    .funfact-button {
-      position: absolute;
-      color: white;
-      outline: none;
-      display: flex;
-      align-items: center;
-      border-radius: 50%;
-
-      bottom: 1.5em;
-      right: 0;
-      z-index: 10;
-
-    
-
-      svg {
-        width: 40px;
-        height: 40px;
-        filter: drop-shadow(4px 8px 4px var(--black-primary));
-        fill: var(--white-secondary);
-        transition: all 0.3s ease-out;
-        border-radius: 50%;
-        cursor: pointer;
-
-
-        &:hover {
-          fill: var(--brown-secondary);
-        }
-
-      }
-    }
-
-    .funfact-text {
-      font-size: 0.9rem;
-      transform: translate(12em, 0);
-      opacity: 0;
-      transition: all 0.3s ease-out;
-      position: relative;
-      top: 2.5em;
-      padding: 1em;
-      background-image: linear-gradient(
-        to right,
-        hsla(0, 0%, 0%, 0.7),
-        transparent
-      );
-      border-radius: 0.7em;
-
-      &.shown {
-        transform: translate(0, 0);
-        opacity: 1;
-      }
-    }
-  }
-`;
 
 export default Funfact;
